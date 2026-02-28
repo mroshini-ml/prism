@@ -10,11 +10,12 @@ CORS(app)
 
 # Paths
 UPLOAD_FOLDER = os.path.join(os.getcwd(), "uploads")
-MOOON_PATH = "/home/joe/Downloads/mooon"  # Update this path
-TEST_SCRIPT = os.path.join(MOOON_PATH, "test.py")  # Path to test.py script
-VIS_SCRIPT = os.path.join(MOOON_PATH, "process_3d.py")  # Path to process_3d.py script
-MODEL_DIR = os.path.join(MOOON_PATH, "models")  # Path to models directory
-OBJ_OUTPUT_DIR = os.path.join(MOOON_PATH, "obj_files")  # Path where .obj files will be saved
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+TEST_SCRIPT = os.path.join(BASE_DIR, "test.py")
+VIS_SCRIPT = os.path.join(BASE_DIR, "process_3d.py")
+MODEL_DIR = os.path.join(BASE_DIR, "models")
+OBJ_OUTPUT_DIR = os.path.join(BASE_DIR, "obj_files")
 
 # Ensure required directories exist
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
